@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LastAccessedDate</key>
+	<date>2016-10-08T17:18:48Z</date>
 	<key>WorkspacePath</key>
-	<string>/Users/bzimmer/Documents/College/EECS 481/Ceyboard++/Ceyboard++.xcodeproj</string>
+	<string>/Users/zachfinkbeiner/Desktop/Fall2016/EECS481/KeyboardApp/Ceyboard/Ceyboard++.xcodeproj</string>
 </dict>
 </plist>

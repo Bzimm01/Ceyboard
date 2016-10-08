@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844B88381DA760E500ECF615 /* ViewController_CreateProj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B88371DA760E500ECF615 /* ViewController_CreateProj.swift */; };
 		88A700881DA589F8002B4F16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A700871DA589F8002B4F16 /* AppDelegate.swift */; };
 		88A7008A1DA589F8002B4F16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A700891DA589F8002B4F16 /* ViewController.swift */; };
 		88A7008D1DA589F8002B4F16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A7008B1DA589F8002B4F16 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		844B88371DA760E500ECF615 /* ViewController_CreateProj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_CreateProj.swift; sourceTree = "<group>"; };
 		88A700821DA589F8002B4F16 /* Ceyboard++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ceyboard++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A700861DA589F8002B4F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88A700871DA589F8002B4F16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				88A700871DA589F8002B4F16 /* AppDelegate.swift */,
 				88A700891DA589F8002B4F16 /* ViewController.swift */,
 				88A7008B1DA589F8002B4F16 /* Main.storyboard */,
+				844B88371DA760E500ECF615 /* ViewController_CreateProj.swift */,
 				88A7008E1DA589F8002B4F16 /* Images.xcassets */,
 				88A700901DA589F8002B4F16 /* LaunchScreen.xib */,
 				88A700851DA589F8002B4F16 /* Supporting Files */,
@@ -156,14 +159,17 @@
 		88A7007A1DA589F7002B4F16 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Brennan Zimmer";
 				TargetAttributes = {
 					88A700811DA589F7002B4F16 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 					};
 					88A700961DA589F8002B4F16 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = 88A700811DA589F7002B4F16;
 					};
 				};
@@ -214,6 +220,7 @@
 			files = (
 				88A7008A1DA589F8002B4F16 /* ViewController.swift in Sources */,
 				88A700881DA589F8002B4F16 /* AppDelegate.swift in Sources */,
+				844B88381DA760E500ECF615 /* ViewController_CreateProj.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +352,7 @@
 				INFOPLIST_FILE = "Ceyboard++/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -355,6 +363,7 @@
 				INFOPLIST_FILE = "Ceyboard++/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -373,6 +382,7 @@
 				INFOPLIST_FILE = "Ceyboard++Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ceyboard++.app/Ceyboard++";
 			};
 			name = Debug;
@@ -388,6 +398,7 @@
 				INFOPLIST_FILE = "Ceyboard++Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ceyboard++.app/Ceyboard++";
 			};
 			name = Release;
@@ -411,6 +422,7 @@
 				88A700A31DA589F8002B4F16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88A700A41DA589F8002B4F16 /* Build configuration list for PBXNativeTarget "Ceyboard++Tests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +431,7 @@
 				88A700A61DA589F8002B4F16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
