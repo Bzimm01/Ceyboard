@@ -7,21 +7,21 @@ provides-member:
 - ["C10Ceyboard__11AppDelegate", ""]
 provides-dynamic-lookup:
 - "applicationWillTerminate"
-- "applicationWillEnterForeground"
-- "applicationDidEnterBackground"
 - "window"
-- "applicationWillResignActive"
+- "applicationWillEnterForeground"
 - "applicationDidBecomeActive"
+- "applicationDidEnterBackground"
+- "applicationWillResignActive"
 - "application"
 depends-top-level:
+- "UIApplicationLaunchOptionsKey"
+- "UIResponder"
 - "AppDelegate"
-- "UIWindow"
 - "Bool"
+- !private "BooleanLiteralType"
 - "UIApplicationDelegate"
 - "UIApplication"
-- "UIApplicationLaunchOptionsKey"
-- !private "BooleanLiteralType"
-- "UIResponder"
+- "UIWindow"
 depends-member:
 - ["Ps9AnyObject", "application"]
 - ["Ps9AnyObject", "applicationDidBecomeActive"]
