@@ -111,6 +111,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
+@import Foundation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -140,7 +141,22 @@ SWIFT_CLASS("_TtC10Ceyboard__17FileTableViewCell")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UITableView;
 @class NSBundle;
+
+SWIFT_CLASS("_TtC10Ceyboard__32TableViewController_OpenExisting")
+@interface TableViewController_OpenExisting : UITableViewController
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull fakeProjectNames;
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView;
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (nonnull instancetype)initWithStyle:(UITableViewStyle)style OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC10Ceyboard__14ViewController")
 @interface ViewController : UIViewController
@@ -161,7 +177,6 @@ SWIFT_CLASS("_TtC10Ceyboard__25ViewController_CreateProj")
 @end
 
 @class UILabel;
-@class UITableView;
 
 SWIFT_CLASS("_TtC10Ceyboard__23ViewController_FileList")
 @interface ViewController_FileList : UIViewController
@@ -169,15 +184,6 @@ SWIFT_CLASS("_TtC10Ceyboard__23ViewController_FileList")
 @property (nonatomic, weak) IBOutlet UITableView * _Null_unspecified FileList;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC10Ceyboard__27ViewController_OpenExisting")
-@interface ViewController_OpenExisting : UIViewController
-- (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end

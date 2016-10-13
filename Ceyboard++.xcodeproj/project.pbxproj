@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		508D18F21DAC2B7900389A70 /* ViewController_OpenExisting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D18F11DAC2B7900389A70 /* ViewController_OpenExisting.swift */; };
+		508D18F41DAD849B00389A70 /* TableViewController_OpenExisting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D18F31DAD849B00389A70 /* TableViewController_OpenExisting.swift */; };
 		844B88381DA760E500ECF615 /* ViewController_CreateProj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B88371DA760E500ECF615 /* ViewController_CreateProj.swift */; };
 		88A700881DA589F8002B4F16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A700871DA589F8002B4F16 /* AppDelegate.swift */; };
 		88A7008A1DA589F8002B4F16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A700891DA589F8002B4F16 /* ViewController.swift */; };
@@ -32,7 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		508D18F11DAC2B7900389A70 /* ViewController_OpenExisting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_OpenExisting.swift; sourceTree = "<group>"; };
+		508D18F31DAD849B00389A70 /* TableViewController_OpenExisting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController_OpenExisting.swift; path = ../TableViewController_OpenExisting.swift; sourceTree = "<group>"; };
 		844B88371DA760E500ECF615 /* ViewController_CreateProj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_CreateProj.swift; sourceTree = "<group>"; };
 		88A700821DA589F8002B4F16 /* Ceyboard++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ceyboard++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A700861DA589F8002B4F16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,10 +92,10 @@
 				88A700871DA589F8002B4F16 /* AppDelegate.swift */,
 				88A700891DA589F8002B4F16 /* ViewController.swift */,
 				88A7008B1DA589F8002B4F16 /* Main.storyboard */,
-				508D18F11DAC2B7900389A70 /* ViewController_OpenExisting.swift */,
 				88EE17621DA9BAE9003D6361 /* FileTableViewCell.swift */,
 				88EE17601DA97608003D6361 /* ViewController_FileList.swift */,
 				844B88371DA760E500ECF615 /* ViewController_CreateProj.swift */,
+				508D18F31DAD849B00389A70 /* TableViewController_OpenExisting.swift */,
 				88EE175C1DA9661F003D6361 /* Project.swift */,
 				88EE175E1DA967E4003D6361 /* File.swift */,
 				88A7008E1DA589F8002B4F16 /* Images.xcassets */,
@@ -237,8 +237,8 @@
 				88EE17631DA9BAEA003D6361 /* FileTableViewCell.swift in Sources */,
 				88A7008A1DA589F8002B4F16 /* ViewController.swift in Sources */,
 				88A700881DA589F8002B4F16 /* AppDelegate.swift in Sources */,
+				508D18F41DAD849B00389A70 /* TableViewController_OpenExisting.swift in Sources */,
 				844B88381DA760E500ECF615 /* ViewController_CreateProj.swift in Sources */,
-				508D18F21DAC2B7900389A70 /* ViewController_OpenExisting.swift in Sources */,
 				88EE17611DA97609003D6361 /* ViewController_FileList.swift in Sources */,
 				88EE175D1DA9661F003D6361 /* Project.swift in Sources */,
 			);

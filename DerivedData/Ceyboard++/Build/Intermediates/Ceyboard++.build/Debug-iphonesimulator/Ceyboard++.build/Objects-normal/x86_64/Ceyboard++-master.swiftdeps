@@ -1,12 +1,12 @@
 version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
 options: "38fad208e8beb6293810705cffb804a8"
-build_time: [529444996, 320473000]
+build_time: [529605968, 489292000]
 inputs:
   "/Users/bozobrent99/Desktop/EECS481/Ceyboard/Ceyboard++/File.swift": [529382384, 0]
   "/Users/bozobrent99/Desktop/EECS481/Ceyboard/Ceyboard++/FileTableViewCell.swift": [529382384, 0]
   "/Users/bozobrent99/Desktop/EECS481/Ceyboard/Ceyboard++/ViewController.swift": [529382384, 0]
   "/Users/bozobrent99/Desktop/EECS481/Ceyboard/Ceyboard++/AppDelegate.swift": [529382384, 0]
+  "/Users/bozobrent99/Desktop/EECS481/Ceyboard/TableViewController_OpenExisting.swift": [529605967, 0]
   "/Users/bozobrent99/Desktop/EECS481/Ceyboard/Ceyboard++/ViewController_CreateProj.swift": [529382384, 0]
-  "/Users/bozobrent99/Desktop/EECS481/Ceyboard/Ceyboard++/ViewController_OpenExisting.swift": [9223372036854775807, 0]
   "/Users/bozobrent99/Desktop/EECS481/Ceyboard/Ceyboard++/ViewController_FileList.swift": [529382384, 0]
   "/Users/bozobrent99/Desktop/EECS481/Ceyboard/Ceyboard++/Project.swift": [529382384, 0]
