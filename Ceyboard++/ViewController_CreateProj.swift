@@ -18,9 +18,9 @@ class ViewController_CreateProj: UIViewController {
         if (ProjectNameText.text?.isEmpty)! {
             return
         }
-        let fileListViewController: ViewController_FileList = self.storyboard?.instantiateViewController(withIdentifier: "ViewController_FileList") as! ViewController_FileList
-        fileListViewController.selectedProject = Project(name: ProjectNameText.text!)
-        self.navigationController?.pushViewController(fileListViewController, animated: true)
+        let fileListTableViewController: TableViewController_FileList = self.storyboard?.instantiateViewController(withIdentifier: "ViewController_FileList") as! TableViewController_FileList
+        fileListTableViewController.selectedProject = Project(name: ProjectNameText.text!)
+        self.navigationController?.pushViewController(fileListTableViewController, animated: true)
     }
     
 

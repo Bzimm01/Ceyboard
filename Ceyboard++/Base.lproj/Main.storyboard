@@ -27,7 +27,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ose-Uw-Amq" kind="presentation" id="1pA-Ew-X0A"/>
+                                    <segue destination="ose-Uw-Amq" kind="show" id="1pA-Ew-X0A"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ceyboard++" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aA4-VR-fjD">
@@ -46,7 +46,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="F0R-sx-hFm" kind="presentation" id="oeP-4y-ceT"/>
+                                    <segue destination="F0R-sx-hFm" kind="show" animates="NO" id="oeP-4y-ceT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -115,49 +115,83 @@
             </objects>
             <point key="canvasLocation" x="2728.8000000000002" y="2.2488755622188905"/>
         </scene>
-        <!--View Controller File List-->
-        <scene sceneID="ucI-Wa-k8h">
+        <!--Project Name-->
+        <scene sceneID="j4F-yk-Mc8">
             <objects>
-                <viewController storyboardIdentifier="ViewController_FileList" id="Qmz-4W-umb" customClass="ViewController_FileList" customModule="Ceyboard__" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ViewController_FileList" id="DNv-ys-5Yg" customClass="TableViewController_FileList" customModule="Ceyboard__" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="28" sectionFooterHeight="28" id="hji-1S-xAn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FileTableViewCell" rowHeight="101" id="HXo-fe-dHK" customClass="FileTableViewCell" customModule="Ceyboard__" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="101"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HXo-fe-dHK" id="dJP-4W-WiM">
+                                    <frame key="frameInset" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="File Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91a-rV-zyF">
+                                            <frame key="frameInset" minX="8" minY="11" width="359" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fileNameLabel" destination="91a-rV-zyF" id="Oof-ah-IkM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="DNv-ys-5Yg" id="pe6-N2-Rpj"/>
+                            <outlet property="delegate" destination="DNv-ys-5Yg" id="U9L-xK-XOY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Project Name" id="uyj-fo-gwl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nyo-Jf-nfX">
+                            <connections>
+                                <segue destination="gCL-nP-7dd" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="bw1-P8-Jpt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6X-CR-V97" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4496.8000000000002" y="2.2488755622188905"/>
+        </scene>
+        <!--Create New File-->
+        <scene sceneID="E63-Pc-WlP">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="nSA-Gm-i0Y" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CPa-be-i08"/>
-                        <viewControllerLayoutGuide type="bottom" id="937-cl-jUD"/>
+                        <viewControllerLayoutGuide type="top" id="8TT-ns-DLw"/>
+                        <viewControllerLayoutGuide type="bottom" id="McF-Jm-4Fn"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VG2-E1-r4k">
+                    <view key="view" contentMode="scaleToFill" id="55e-fA-26f">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Project Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kT0-2Z-t1K">
-                                <frame key="frameInset" minX="130" minY="80" width="115" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter file name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X6n-bn-SC1">
+                                <frame key="frameInset" minX="16" minY="112" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-Xq-34H">
-                                <frame key="frameInset" minX="16" minY="127" width="343" height="439"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyK-Hg-EP1">
-                                <frame key="frameInset" minX="114" minY="610" width="148" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.4350330508558275" green="0.67287644491721277" blue="0.99882429838180542" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Create New File">
-                                    <color key="titleColor" red="0.0" green="0.0020719666393538283" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="FileList" destination="2Ne-Xq-34H" id="gsR-at-dFR"/>
-                        <outlet property="SelectedProjectName" destination="kT0-2Z-t1K" id="3nv-gK-75G"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Create New File" id="zq5-ju-QC5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HcN-N6-ziJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zH1-hH-KQJ"/>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="907-qJ-Mzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ipN-Dd-gMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3645.5999999999999" y="3.1484257871064472"/>
+            <point key="canvasLocation" x="6184.8000000000002" y="1.3493253373313345"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="LRc-cu-Sh3">
@@ -191,6 +225,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ose-Uw-Amq" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="JgM-h8-ChL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SrH-aF-vIm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -221,6 +256,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBS-p1-gOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="276" y="372.86356821589209"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Uam-7h-cxt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C3c-0M-Ibe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mjk-RH-sMI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DNv-ys-5Yg" kind="relationship" relationship="rootViewController" id="59x-np-6KJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ls-Hf-9Fw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3557.5999999999999" y="2.2488755622188905"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6pQ-aO-GdM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gCL-nP-7dd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d1q-yk-NQx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="nSA-Gm-i0Y" kind="relationship" relationship="rootViewController" id="AqD-tx-AKe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oN-R0-PUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5245.6000000000004" y="1.3493253373313345"/>
         </scene>
     </scenes>
 </document>
