@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1215.2" y="372.86356821589209"/>
+            <point key="canvasLocation" x="1068" y="373"/>
         </scene>
         <!--View Controller Create Proj-->
         <scene sceneID="ej5-tB-WGi">
@@ -115,8 +115,37 @@
             </objects>
             <point key="canvasLocation" x="2728.8000000000002" y="2.2488755622188905"/>
         </scene>
-        <!--Project Name-->
-        <scene sceneID="j4F-yk-Mc8">
+        <!--Open Existing Project-->
+        <scene sceneID="48f-iC-4ge">
+            <objects>
+                <tableViewController id="PAK-Iq-Bpr" customClass="TableViewController_OpenExisting" customModule="Ceyboard__" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gSl-LU-4W6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="QH6-xt-dgO">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QH6-xt-dgO" id="N9O-ru-UaR">
+                                    <frame key="frameInset" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PAK-Iq-Bpr" id="bWQ-vc-YhM"/>
+                            <outlet property="delegate" destination="PAK-Iq-Bpr" id="tul-qb-J7o"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Open Existing Project" id="p5G-27-yJe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfS-Ts-nsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2729" y="743"/>
+        </scene>
+        <!--View Controller File List-->
+        <scene sceneID="ucI-Wa-k8h">
             <objects>
                 <tableViewController storyboardIdentifier="ViewController_FileList" id="DNv-ys-5Yg" customClass="TableViewController_FileList" customModule="Ceyboard__" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="28" sectionFooterHeight="28" id="hji-1S-xAn">
@@ -192,33 +221,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipN-Dd-gMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6184.8000000000002" y="1.3493253373313345"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="LRc-cu-Sh3">
-            <objects>
-                <viewController id="F0R-sx-hFm" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4dB-zm-1Ud"/>
-                        <viewControllerLayoutGuide type="bottom" id="U13-hB-Tfd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TTs-bC-iip">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Open Existing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiB-2k-gum">
-                                <frame key="frameInset" minX="132" minY="97" width="110" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0sz-wO-fZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1972" y="726.38680659670172"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lO2-GQ-qo5">
