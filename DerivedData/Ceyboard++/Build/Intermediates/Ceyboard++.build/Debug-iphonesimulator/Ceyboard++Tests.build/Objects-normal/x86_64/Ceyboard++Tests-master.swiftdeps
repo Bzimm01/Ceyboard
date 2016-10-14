@@ -1,5 +1,0 @@
-version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
-options: "fef5a4a732d61d2c9ac783b91389ae02"
-build_time: [529263059, 263638000]
-inputs:
-  "/Users/bzimmer/Documents/College/EECS 481/Ceyboard++/Ceyboard++Tests/Ceyboard__Tests.swift": [529262847, 0]
