@@ -32,7 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		508D18F31DAD849B00389A70 /* TableViewController_OpenExisting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewController_OpenExisting.swift; path = ../TableViewController_OpenExisting.swift; sourceTree = "<group>"; };
+		508D18F31DAD849B00389A70 /* TableViewController_OpenExisting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_OpenExisting.swift; sourceTree = "<group>"; };
 		844B88371DA760E500ECF615 /* ViewController_CreateProj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_CreateProj.swift; sourceTree = "<group>"; };
 		884DBF721DADAA0E00F94BBE /* TableViewController_FileList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_FileList.swift; sourceTree = "<group>"; };
 		88A700821DA589F8002B4F16 /* Ceyboard++.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ceyboard++.app"; sourceTree = BUILT_PRODUCTS_DIR; };
