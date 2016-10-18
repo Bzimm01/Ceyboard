@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		505105781DB556CA005459E4 /* TableViewCell_OpenExisting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505105761DB556C9005459E4 /* TableViewCell_OpenExisting.swift */; };
+		505105791DB556CA005459E4 /* TableViewCell_OpenExisting.xib in Resources */ = {isa = PBXBuildFile; fileRef = 505105771DB556CA005459E4 /* TableViewCell_OpenExisting.xib */; };
 		508D18F41DAD849B00389A70 /* TableViewController_OpenExisting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D18F31DAD849B00389A70 /* TableViewController_OpenExisting.swift */; };
 		844B88381DA760E500ECF615 /* ViewController_CreateProj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844B88371DA760E500ECF615 /* ViewController_CreateProj.swift */; };
 		884DBF731DADAA0E00F94BBE /* TableViewController_FileList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884DBF721DADAA0E00F94BBE /* TableViewController_FileList.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		505105761DB556C9005459E4 /* TableViewCell_OpenExisting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell_OpenExisting.swift; sourceTree = "<group>"; };
+		505105771DB556CA005459E4 /* TableViewCell_OpenExisting.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell_OpenExisting.xib; sourceTree = "<group>"; };
 		508D18F31DAD849B00389A70 /* TableViewController_OpenExisting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_OpenExisting.swift; sourceTree = "<group>"; };
 		844B88371DA760E500ECF615 /* ViewController_CreateProj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_CreateProj.swift; sourceTree = "<group>"; };
 		884DBF721DADAA0E00F94BBE /* TableViewController_FileList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController_FileList.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				884DBF721DADAA0E00F94BBE /* TableViewController_FileList.swift */,
 				844B88371DA760E500ECF615 /* ViewController_CreateProj.swift */,
 				508D18F31DAD849B00389A70 /* TableViewController_OpenExisting.swift */,
+				505105761DB556C9005459E4 /* TableViewCell_OpenExisting.swift */,
+				505105771DB556CA005459E4 /* TableViewCell_OpenExisting.xib */,
 				88EE175C1DA9661F003D6361 /* Project.swift */,
 				88EE175E1DA967E4003D6361 /* File.swift */,
 				88A7008E1DA589F8002B4F16 /* Images.xcassets */,
@@ -215,6 +221,7 @@
 			files = (
 				88A7008D1DA589F8002B4F16 /* Main.storyboard in Resources */,
 				88A700921DA589F8002B4F16 /* LaunchScreen.xib in Resources */,
+				505105791DB556CA005459E4 /* TableViewCell_OpenExisting.xib in Resources */,
 				88A7008F1DA589F8002B4F16 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,6 +245,7 @@
 				88A7008A1DA589F8002B4F16 /* ViewController.swift in Sources */,
 				884DBF731DADAA0E00F94BBE /* TableViewController_FileList.swift in Sources */,
 				88A700881DA589F8002B4F16 /* AppDelegate.swift in Sources */,
+				505105781DB556CA005459E4 /* TableViewCell_OpenExisting.swift in Sources */,
 				508D18F41DAD849B00389A70 /* TableViewController_OpenExisting.swift in Sources */,
 				844B88381DA760E500ECF615 /* ViewController_CreateProj.swift in Sources */,
 				88EE175D1DA9661F003D6361 /* Project.swift in Sources */,
