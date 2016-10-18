@@ -168,6 +168,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="fileNameLabel" destination="91a-rV-zyF" id="Oof-ah-IkM"/>
+                                    <segue destination="jMA-YH-7mS" kind="show" identifier="ShowFileDetail" id="3GG-xY-JZ5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -177,9 +178,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Project Name" id="uyj-fo-gwl">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nyo-Jf-nfX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kZV-IB-Rxn">
                             <connections>
-                                <segue destination="gCL-nP-7dd" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="bw1-P8-Jpt"/>
+                                <action selector="addButtonPressed:" destination="DNv-ys-5Yg" id="4zg-zX-um1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -191,7 +192,7 @@
         <!--Create New File-->
         <scene sceneID="E63-Pc-WlP">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="nSA-Gm-i0Y" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateNewFileVC" modalPresentationStyle="overCurrentContext" id="nSA-Gm-i0Y" customClass="NewFileViewController" customModule="Ceyboard__" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8TT-ns-DLw"/>
                         <viewControllerLayoutGuide type="bottom" id="McF-Jm-4Fn"/>
@@ -211,13 +212,55 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create New File" id="zq5-ju-QC5">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HcN-N6-ziJ"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zH1-hH-KQJ"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HcN-N6-ziJ">
+                            <connections>
+                                <action selector="cancel:" destination="nSA-Gm-i0Y" id="0cy-xU-ea2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zH1-hH-KQJ">
+                            <connections>
+                                <action selector="prepareForSegue:" destination="nSA-Gm-i0Y" id="uvE-65-R85"/>
+                                <segue destination="Mon-KG-aF1" kind="unwind" unwindAction="unwindToFileListWithSender:" id="5zL-Z2-xrD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newFileName" destination="X6n-bn-SC1" id="5Ff-pN-1wF"/>
+                        <outlet property="saveButton" destination="zH1-hH-KQJ" id="xVU-fP-Hk9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipN-Dd-gMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Mon-KG-aF1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6184.8000000000002" y="1.3493253373313345"/>
+        </scene>
+        <!--File Name-->
+        <scene sceneID="aOo-oS-GIZ">
+            <objects>
+                <viewController id="jMA-YH-7mS" customClass="FileViewController" customModule="Ceyboard__" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NGg-Je-Va5"/>
+                        <viewControllerLayoutGuide type="bottom" id="byU-sk-CQY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3NE-hl-bXP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d1m-xi-PMs">
+                                <frame key="frameInset" minX="16" minY="72" width="343" height="575"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="File Name" id="te1-El-or3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QmM-gq-RMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7124" y="742.5787106446777"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lO2-GQ-qo5">
@@ -292,5 +335,26 @@
             </objects>
             <point key="canvasLocation" x="5245.6000000000004" y="1.3493253373313345"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="elf-ng-1pk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zS3-JO-6iu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CYv-vO-Enn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jMA-YH-7mS" kind="relationship" relationship="rootViewController" id="tZp-1p-05Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Pt-g9-ZpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6184.8000000000002" y="742.5787106446777"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3GG-xY-JZ5"/>
+    </inferredMetricsTieBreakers>
 </document>
