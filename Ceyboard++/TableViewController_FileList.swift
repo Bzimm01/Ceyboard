@@ -5,7 +5,7 @@
 //  Created by Brennan Zimmer on 10/11/16.
 //  Copyright © 2016 Brennan Zimmer. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 class TableViewController_FileList: UITableViewController {
@@ -22,7 +22,15 @@ class TableViewController_FileList: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
+    // MARK: Actions
+    
+    @IBAction func addButtonPressed(_ sender: AnyObject) {
+        let newFileViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateNewFileVC") as! NewFileViewController
+        newFileViewController.selectedProject = self.selectedProject
+        self.navigationController?.pushViewController(newFileViewController, animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -97,14 +105,37 @@ class TableViewController_FileList: UITableViewController {
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "ShowFileDetail" {
+            print(segue.destination)
+            let fileDetailViewController = segue.destination as! FileViewController
+            if let selectedFileCell = sender as? FileTableViewCell{
+                let indexPath = tableView.indexPath(for: selectedFileCell)
+                let selectedFile = selectedProject?.files[(indexPath?.row)!]
+                fileDetailViewController.file = selectedFile
+            }
+        }
     }
-    */
-
+ 
+    
+    @IBAction func unwindToFileList(sender: UIStoryboardSegue) {
+        
+        if let sourceViewController = sender.source as? NewFileViewController{
+            let newFile = sourceViewController.file
+            //let newIndexPath = IndexPath(row: (selectedProject?.files.count)!, section: 0)
+            selectedProject?.files.append(newFile!)
+            //tableView.insertRows(at: [newIndexPath], with: .bottom)
+            
+            tableView.reloadData()
+            
+        }
+    }
+    
 }

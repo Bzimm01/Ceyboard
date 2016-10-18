@@ -252,8 +252,11 @@
 				88A7008A1DA589F8002B4F16 /* ViewController.swift in Sources */,
 				884DBF731DADAA0E00F94BBE /* TableViewController_FileList.swift in Sources */,
 				88A700881DA589F8002B4F16 /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
 				505105781DB556CA005459E4 /* TableViewCell_OpenExisting.swift in Sources */,
+=======
 				884DBF771DB6B5E200F94BBE /* FileViewController.swift in Sources */,
+>>>>>>> 30b305a83edcbcd6b6cbbd03c0a58b1201ccec63
 				508D18F41DAD849B00389A70 /* TableViewController_OpenExisting.swift in Sources */,
 				844B88381DA760E500ECF615 /* ViewController_CreateProj.swift in Sources */,
 				88EE175D1DA9661F003D6361 /* Project.swift in Sources */,
