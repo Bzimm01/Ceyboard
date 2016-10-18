@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myv-7W-REH">
@@ -46,11 +46,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-<<<<<<< HEAD
-                                    <segue destination="O2O-16-Nhr" kind="push" id="BYp-A2-lEM"/>
-=======
-                                    <segue destination="F0R-sx-hFm" kind="show" animates="NO" id="oeP-4y-ceT"/>
->>>>>>> master
+                                    <segue destination="PAK-Iq-Bpr" kind="show" id="NDi-8y-s7t"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,7 +67,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ibf-Zk-wPx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yrp-cI-Xcc" userLabel="create_button">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter Project Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s56-br-zGW">
@@ -119,23 +115,25 @@
             </objects>
             <point key="canvasLocation" x="2728.8000000000002" y="2.2488755622188905"/>
         </scene>
-<<<<<<< HEAD
         <!--Open Existing Project-->
         <scene sceneID="48f-iC-4ge">
             <objects>
                 <tableViewController id="PAK-Iq-Bpr" customClass="TableViewController_OpenExisting" customModule="Ceyboard__" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gSl-LU-4W6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="QH6-xt-dgO">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="QH6-xt-dgO" customClass="TableViewCell_OpenExisting" customModule="Ceyboard__" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QH6-xt-dgO" id="N9O-ru-UaR">
-                                    <frame key="frameInset" width="375" height="44"/>
+                                    <frame key="frameInset" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="DNv-ys-5Yg" kind="show" identifier="SelectProject" id="wmb-u4-leR"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -147,26 +145,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfS-Ts-nsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2729" y="743"/>
+            <point key="canvasLocation" x="1913" y="742"/>
         </scene>
-        <!--View Controller File List-->
-        <scene sceneID="ucI-Wa-k8h">
-=======
         <!--Project Name-->
-        <scene sceneID="j4F-yk-Mc8">
->>>>>>> master
+        <scene sceneID="ucI-Wa-k8h">
             <objects>
                 <tableViewController storyboardIdentifier="ViewController_FileList" id="DNv-ys-5Yg" customClass="TableViewController_FileList" customModule="Ceyboard__" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="28" sectionFooterHeight="28" id="hji-1S-xAn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FileTableViewCell" rowHeight="101" id="HXo-fe-dHK" customClass="FileTableViewCell" customModule="Ceyboard__" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="101"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="101"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HXo-fe-dHK" id="dJP-4W-WiM">
-                                    <frame key="frameInset" width="375" height="100"/>
+                                    <frame key="frameInset" width="414" height="100.66666666666667"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="File Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91a-rV-zyF">
@@ -180,6 +174,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="fileNameLabel" destination="91a-rV-zyF" id="Oof-ah-IkM"/>
+                                    <segue destination="jMA-YH-7mS" kind="show" identifier="ShowFileDetail" id="3GG-xY-JZ5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -189,9 +184,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Project Name" id="uyj-fo-gwl">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nyo-Jf-nfX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kZV-IB-Rxn">
                             <connections>
-                                <segue destination="gCL-nP-7dd" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="bw1-P8-Jpt"/>
+                                <action selector="addButtonPressed:" destination="DNv-ys-5Yg" id="4zg-zX-um1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -203,13 +198,13 @@
         <!--Create New File-->
         <scene sceneID="E63-Pc-WlP">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="nSA-Gm-i0Y" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateNewFileVC" modalPresentationStyle="overCurrentContext" id="nSA-Gm-i0Y" customClass="NewFileViewController" customModule="Ceyboard__" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8TT-ns-DLw"/>
                         <viewControllerLayoutGuide type="bottom" id="McF-Jm-4Fn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="55e-fA-26f">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter file name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X6n-bn-SC1">
@@ -223,13 +218,55 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create New File" id="zq5-ju-QC5">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HcN-N6-ziJ"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zH1-hH-KQJ"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HcN-N6-ziJ">
+                            <connections>
+                                <action selector="cancel:" destination="nSA-Gm-i0Y" id="0cy-xU-ea2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="zH1-hH-KQJ">
+                            <connections>
+                                <action selector="prepareForSegue:" destination="nSA-Gm-i0Y" id="uvE-65-R85"/>
+                                <segue destination="Mon-KG-aF1" kind="unwind" unwindAction="unwindToFileListWithSender:" id="5zL-Z2-xrD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newFileName" destination="X6n-bn-SC1" id="5Ff-pN-1wF"/>
+                        <outlet property="saveButton" destination="zH1-hH-KQJ" id="xVU-fP-Hk9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipN-Dd-gMH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Mon-KG-aF1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6184.8000000000002" y="1.3493253373313345"/>
+        </scene>
+        <!--File Name-->
+        <scene sceneID="aOo-oS-GIZ">
+            <objects>
+                <viewController id="jMA-YH-7mS" customClass="FileViewController" customModule="Ceyboard__" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NGg-Je-Va5"/>
+                        <viewControllerLayoutGuide type="bottom" id="byU-sk-CQY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3NE-hl-bXP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="d1m-xi-PMs">
+                                <frame key="frameInset" minX="16" minY="72" width="343" height="575"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="File Name" id="te1-El-or3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QmM-gq-RMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7124" y="742.5787106446777"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lO2-GQ-qo5">
@@ -269,33 +306,16 @@
             <point key="canvasLocation" x="276" y="372.86356821589209"/>
         </scene>
         <!--Navigation Controller-->
-<<<<<<< HEAD
-        <scene sceneID="b3g-iB-vec">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O2O-16-Nhr" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="n1w-6h-pbu"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DgJ-ZI-RZw">
-=======
         <scene sceneID="Uam-7h-cxt">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C3c-0M-Ibe" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mjk-RH-sMI">
->>>>>>> master
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-<<<<<<< HEAD
-                        <segue destination="PAK-Iq-Bpr" kind="relationship" relationship="rootViewController" id="Bkv-Mh-LZZ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ST3-Yg-sm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1914" y="743"/>
-=======
                         <segue destination="DNv-ys-5Yg" kind="relationship" relationship="rootViewController" id="59x-np-6KJ"/>
                     </connections>
                 </navigationController>
@@ -320,7 +340,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oN-R0-PUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5245.6000000000004" y="1.3493253373313345"/>
->>>>>>> master
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="elf-ng-1pk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zS3-JO-6iu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CYv-vO-Enn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jMA-YH-7mS" kind="relationship" relationship="rootViewController" id="tZp-1p-05Z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Pt-g9-ZpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6184.8000000000002" y="742.5787106446777"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wmb-u4-leR"/>
+    </inferredMetricsTieBreakers>
 </document>

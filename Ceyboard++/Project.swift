@@ -13,6 +13,7 @@ class Project {
     // MARK: Properties
     var name: String
     var files: [File]
+    var dateLM: NSDate
     
     // MARK: Initilization
     init?(name: String){
@@ -22,5 +23,6 @@ class Project {
         if (name.isEmpty){
             return nil
         }
+        self.dateLM = NSDate()
     }
 }
