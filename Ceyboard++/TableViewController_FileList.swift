@@ -57,16 +57,17 @@ class TableViewController_FileList: UITableViewController {
         
         if (selectedProject?.files.isEmpty)!{
             cell.fileNameLabel.text = "No files yet"
+            cell.isUserInteractionEnabled = false
         }else{
             let file = selectedProject?.files[indexPath.row]
             cell.fileNameLabel.text = file?.name
+            cell.isUserInteractionEnabled = true
         }
 
         // Configure the cell...
 
         return cell
     }
- 
 
     /*
     // Override to support conditional editing of the table view.
@@ -114,6 +115,9 @@ class TableViewController_FileList: UITableViewController {
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "ShowFileDetail" {
+            if (selectedProject?.files.isEmpty)!{
+                return
+            }
             print(segue.destination)
             let fileDetailViewController = segue.destination as! FileViewController
             if let selectedFileCell = sender as? FileTableViewCell{

@@ -11,13 +11,13 @@ import UIKit
 class File{
     // MARK: Properties
     var name: String
-    var content: UITextField
+    var content: String
     
     // MARK: Initilization
     init?(name: String){
         
         self.name = name
-        self.content = UITextField()
+        self.content = ""
         
         if (name.isEmpty){
             return nil
