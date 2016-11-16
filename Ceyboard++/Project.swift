@@ -9,20 +9,47 @@
 import UIKit
 
 
-class Project {
+class Project: NSObject, NSCoding {
     // MARK: Properties
     var name: String
     var files: [File]
     var dateLM: NSDate
     
+    struct PropertyKey{
+        static let name = "name"
+        static let files = "files"
+        static let date = "date"
+    }
+    
+    // MARK: Archive Path
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("projects")
+    
     // MARK: Initilization
-    init?(name: String){
+    init?(name: String, files: [File], date: NSDate){
         self.name = name
-        self.files = [File]()
+        self.files = files
+        self.dateLM = date
+        
+        super.init()
         
         if (name.isEmpty){
             return nil
         }
-        self.dateLM = NSDate()
+    }
+    
+    // MARK: NSCoder
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: PropertyKey.name)
+        aCoder.encode(files, forKey: PropertyKey.files)
+        aCoder.encode(dateLM, forKey: PropertyKey.date)
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let name = aDecoder.decodeObject(forKey: PropertyKey.name) as! String
+        let files = aDecoder.decodeObject(forKey: PropertyKey.files) as! [File]
+        let date = aDecoder.decodeObject(forKey: PropertyKey.date) as! NSDate
+        
+        self.init(name: name, files: files, date: date)
     }
 }

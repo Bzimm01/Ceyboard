@@ -14,7 +14,8 @@ class NewFileViewController: UIViewController, UINavigationControllerDelegate{
     var selectedProject: Project?
     
     @IBAction func cancel(_ sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
+        
+    navigationController?.popViewController(animated: true)
         
     }
     @IBOutlet weak var saveButton: UIBarButtonItem!
@@ -35,7 +36,7 @@ class NewFileViewController: UIViewController, UINavigationControllerDelegate{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let name = newFileName.text ?? ""
-        file = File(name: name)
+        file = File(name: name, content: UITextView())
         
     }
     

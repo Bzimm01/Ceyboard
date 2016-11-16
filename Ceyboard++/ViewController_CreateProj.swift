@@ -19,7 +19,13 @@ class ViewController_CreateProj: UIViewController {
             return
         }
         let fileListTableViewController: TableViewController_FileList = self.storyboard?.instantiateViewController(withIdentifier: "ViewController_FileList") as! TableViewController_FileList
-        fileListTableViewController.selectedProject = Project(name: ProjectNameText.text!)
+        
+        //save new project
+        let newProject = Project(name: ProjectNameText.text!, files: [File](), date: NSDate())
+        fileListTableViewController.selectedProject = newProject
+        TableViewController_OpenExisting.allProjects.append(newProject!)
+        TableViewController_OpenExisting.saveProjects()
+        
         self.navigationController?.pushViewController(fileListTableViewController, animated: true)
     }
     

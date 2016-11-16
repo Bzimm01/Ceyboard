@@ -10,22 +10,28 @@ import UIKit
 
 class TableViewController_OpenExisting: UITableViewController {
     
+    static
+    
+    
     var allProjects: [Project] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let Project1 = Project(name : "Project 1"); allProjects.append(Project1!)
+        /*
+        let Project1 = Project(name : "Project 1", files: [File](), date: NSDate()); TableViewController_OpenExisting.allProjects.append(Project1!)
         Project1?.files.append(File(name: "sampleFile.cpp")!)
-        let Project2 = Project(name : "Project 2"); allProjects.append(Project2!)
-        let Project3 = Project(name : "Project 3"); allProjects.append(Project3!)
-        let Project4 = Project(name : "Project 4"); allProjects.append(Project4!)
-        let Project5 = Project(name : "Project 5"); allProjects.append(Project5!)
-        let Project11 = Project(name : "Project 11"); allProjects.append(Project11!)
-        let Project21 = Project(name : "Project 21"); allProjects.append(Project21!)
-        let Project31 = Project(name : "Project 31"); allProjects.append(Project31!)
-        let Project41 = Project(name : "Project 41"); allProjects.append(Project41!)
-        let Project51 = Project(name : "Project 51"); allProjects.append(Project51!)
+        let Project2 = Project(name : "Project 2", files: [File](), date: NSDate()); TableViewController_OpenExisting.allProjects.append(Project2!)
+        let Project3 = Project(name : "Project 3", files: [File](), date: NSDate()); TableViewController_OpenExisting.allProjects.append(Project3!)
+        let Project4 = Project(name : "Project 4", files: [File](), date: NSDate()); TableViewController_OpenExisting.allProjects.append(Project4!)
+        let Project5 = Project(name : "Project 5", files: [File](), date: NSDate()); TableViewController_OpenExisting.allProjects.append(Project5!)
+        let Project11 = Project(name : "Project 11", files: [File](), date: NSDate()); TableViewController_OpenExisting.allProjects.append(Project11!)
+        let Project21 = Project(name : "Project 21", files: [File](), date: NSDate()); TableViewController_OpenExisting.allProjects.append(Project21!)
+        let Project31 = Project(name : "Project 31", files: [File](), date: NSDate()); TableViewController_OpenExisting.allProjects.append(Project31!)
+        let Project41 = Project(name : "Project 41", files: [File](), date: NSDate()); TableViewController_OpenExisting.allProjects.append(Project41!)
+        let Project51 = Project(name : "Project 51", files: [File](), date: NSDate()); TableViewController_OpenExisting.allProjects.append(Project51!)
+        */
+        
+        TableViewController_OpenExisting.allProjects = loadProjects()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -50,7 +56,7 @@ class TableViewController_OpenExisting: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
-        return allProjects.count
+        return TableViewController_OpenExisting.allProjects.count
         
     }
 
@@ -60,21 +66,37 @@ class TableViewController_OpenExisting: UITableViewController {
         let cell = Bundle.main.loadNibNamed(
             "TableViewCell_OpenExisting", owner: self, options: nil)?.first as! TableViewCell_OpenExisting
         
-        let dateLM = allProjects[indexPath.row].dateLM
+        let dateLM = TableViewController_OpenExisting.allProjects[indexPath.row].dateLM
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         let strDateLM = dateFormatter.string(from: dateLM as Date)
         
-        cell.projectName.text = allProjects[indexPath.row].name
+        cell.projectName.text = TableViewController_OpenExisting.allProjects[indexPath.row].name
         cell.dateLM.text = strDateLM
         
         return cell
     }
     
     
+    
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            TableViewController_OpenExisting.allProjects.remove(at: indexPath.row)
+            TableViewController_OpenExisting.saveProjects()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            
+        } else if editingStyle == .insert {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+     }
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let selectedProject = allProjects[indexPath.row]
+        let selectedProject = TableViewController_OpenExisting.allProjects[indexPath.row]
         
         let viewController = storyboard?.instantiateViewController(withIdentifier: "ViewController_FileList") as! TableViewController_FileList
         viewController.selectedProject = selectedProject
@@ -99,6 +121,19 @@ class TableViewController_OpenExisting: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
+    
+    // MARK: NSCoding
+    static func saveProjects(){
+        let isSaveSuccessful = NSKeyedArchiver.archiveRootObject(allProjects, toFile: Project.ArchiveURL.path)
+        if (!isSaveSuccessful){
+            print("Save did not work")
+        }
+    }
+    
+    func loadProjects() -> [Project]{
+        return (NSKeyedUnarchiver.unarchiveObject(withFile: Project.ArchiveURL.path) as? [Project])!
+    }
+    
     
     /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

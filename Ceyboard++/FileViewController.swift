@@ -11,23 +11,18 @@ import UIKit
 //var textViewText = ""
 
 class FileViewController: UIViewController {
-    @IBOutlet weak var textViewHome: UITextView!
-
-    // MARK: Properties
     
+    // MARK: Properties
     var file: File?
-    var initial_viewText: String?
+    @IBOutlet weak var textViewHome: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationItem.title = file?.name
-        if (initial_viewText == nil){
-            textViewHome.text = file?.content
-        }else{
-            textViewHome.text = initial_viewText
-        }
-        self.navigationItem.hidesBackButton = true //CHANGE
-            //textViewText = textView.text
+        self.automaticallyAdjustsScrollViewInsets = false
+
+        textViewHome.text = file?.content.text
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +31,13 @@ class FileViewController: UIViewController {
     }
     
     
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        textViewHome.endEditing(true)
+        file?.content.text = textViewHome.text!
+        TableViewController_OpenExisting.saveProjects()
+        print(textViewHome.text!)
+        
+    }
     
     // MARK: - Navigation
 
@@ -47,13 +49,7 @@ class FileViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let nextVC = segue.destination as! ContainersView
-        if (self.textViewHome.text == nil){
-            nextVC.textViewContainer.text = ""
-        }else{
-            print(textViewHome.text)
-            nextVC.initial_viewText = (textViewHome.text)!
-        }
+        print("going back")
         
     }
     
