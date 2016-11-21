@@ -49,9 +49,10 @@ class TableViewController_OpenExisting: UITableViewController {
     /*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
  */
+ 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -63,8 +64,8 @@ class TableViewController_OpenExisting: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = Bundle.main.loadNibNamed(
-            "TableViewCell_OpenExisting", owner: self, options: nil)?.first as! TableViewCell_OpenExisting
+        let identifier = "TableViewCell_OpenExisting"
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TableViewCell_OpenExisting
         
         let dateLM = TableViewController_OpenExisting.allProjects[indexPath.row].dateLM
         let dateFormatter = DateFormatter()
@@ -94,7 +95,7 @@ class TableViewController_OpenExisting: UITableViewController {
      }
     
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let selectedProject = TableViewController_OpenExisting.allProjects[indexPath.row]
         
@@ -102,25 +103,7 @@ class TableViewController_OpenExisting: UITableViewController {
         viewController.selectedProject = selectedProject
         self.navigationController?.pushViewController(viewController, animated: true)
         
-    }
-
-    
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        label.center = CGPoint(x: 160, y: 285)
-        label.textAlignment = .center
-        label.text = "I'am a test label"
-        self.view.addSubview(label)
-        
-        return label
-        
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
-    }
+    }*/
     
     // MARK: NSCoding
     static func saveProjects(){
@@ -135,7 +118,7 @@ class TableViewController_OpenExisting: UITableViewController {
     }
     
     
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "SelectProject" {
@@ -144,7 +127,7 @@ class TableViewController_OpenExisting: UITableViewController {
             
             if let selectedProjectCell = sender as? TableViewCell_OpenExisting {
                 let indexPath = tableView.indexPath(for: selectedProjectCell)!
-                let selectedProject = allProjects[indexPath.row]
+                let selectedProject = TableViewController_OpenExisting.allProjects[indexPath.row]
                 fileListViewController.selectedProject = selectedProject
                 
                 print(selectedProject)
@@ -152,6 +135,6 @@ class TableViewController_OpenExisting: UITableViewController {
             }
         }
     }
- */
+ 
 
 }
