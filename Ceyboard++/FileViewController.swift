@@ -24,7 +24,10 @@ class FileViewController: UIViewController {
 
         textViewHome.text = file?.content.text
     }
-
+    override func viewWillDisappear(_ animated: Bool) {
+        file?.content.text = textViewHome.text!
+        TableViewController_OpenExisting.saveProjects()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -36,22 +39,37 @@ class FileViewController: UIViewController {
         file?.content.text = textViewHome.text!
         TableViewController_OpenExisting.saveProjects()
         print(textViewHome.text!)
+        let alertView = UIAlertController(title: "Success!", message: "File saved", preferredStyle: .alert)
+        present(alertView, animated: true, completion: nil)
+        let when = DispatchTime.now() + 2 // delay of 2 seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+            alertView.dismiss(animated: true, completion: nil)
+        }
         
     }
     
     // MARK: - Navigation
+    
+    override func willMove(toParentViewController parent: UIViewController?) {
+        if parent == nil {
+            print("back button press")
+            // Back btn Event handler
+            textViewHome.endEditing(true)
+            file?.content.text = textViewHome.text!
+            TableViewController_OpenExisting.saveProjects()
+            
+        }else{
+            
+        }
+    }
 
-//    @IBAction func backButtonPressed(_ sender: AnyObject) {
-//        let fileListTableViewController: TableViewController_FileList = self.storyboard?.instantiateViewController(withIdentifier: "ViewController_FileList") as! TableViewController_FileList
-//        self.navigationController?.pushViewController(fileListTableViewController, animated: true)
-//    }
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        print("going back")
+    @IBAction func unwindToFileView(sender: UIStoryboardSegue){
+        let renameVC = sender.source as! RenameFile
+        file?.name = renameVC.newFileName.text!
+        TableViewController_OpenExisting.saveProjects()
+        navigationItem.title = file?.name
         
     }
     
-
 }

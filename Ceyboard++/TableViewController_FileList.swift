@@ -15,14 +15,11 @@ class TableViewController_FileList: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = selectedProject?.name
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
     // MARK: Actions
     
     @IBAction func addButtonPressed(_ sender: AnyObject) {
@@ -43,11 +40,7 @@ class TableViewController_FileList: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (selectedProject?.files.isEmpty)!{
-            return 1
-        }else{
-            return (selectedProject?.files.count)!
-        }
+        return (selectedProject?.files.count)!
     }
 
     
@@ -55,28 +48,12 @@ class TableViewController_FileList: UITableViewController {
         let identifier = "FileTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! FileTableViewCell
         
-        if (selectedProject?.files.isEmpty)!{
-            cell.fileNameLabel.text = "No files yet"
-            cell.isUserInteractionEnabled = false
-        }else{
-            let file = selectedProject?.files[indexPath.row]
-            cell.fileNameLabel.text = file?.name
-            cell.isUserInteractionEnabled = true
-        }
-
-        // Configure the cell...
+        let file = selectedProject?.files[indexPath.row]
+        cell.fileNameLabel.text = file?.name
+        cell.isUserInteractionEnabled = true
 
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -85,26 +62,11 @@ class TableViewController_FileList: UITableViewController {
             selectedProject?.files.remove(at: indexPath.row)
             TableViewController_OpenExisting.saveProjects()
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
- 
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
     
     
 
@@ -135,9 +97,7 @@ class TableViewController_FileList: UITableViewController {
         
         if let sourceViewController = sender.source as? NewFileViewController{
             let newFile = sourceViewController.file
-            //let newIndexPath = IndexPath(row: (selectedProject?.files.count)!, section: 0)
             selectedProject?.files.append(newFile!)
-            //tableView.insertRows(at: [newIndexPath], with: .bottom)
             
             tableView.reloadData()
             TableViewController_OpenExisting.saveProjects()

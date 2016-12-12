@@ -14,9 +14,7 @@ class NewFileViewController: UIViewController, UINavigationControllerDelegate{
     var selectedProject: Project?
     
     @IBAction func cancel(_ sender: AnyObject) {
-        
-    navigationController?.popViewController(animated: true)
-        
+        navigationController?.popViewController(animated: true)
     }
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -24,41 +22,21 @@ class NewFileViewController: UIViewController, UINavigationControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Disable Save button if nothing is there
-        //checkValidFileName()
     }
     
     @IBAction func prepareForSegue(_ sender: AnyObject) {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let name = newFileName.text ?? ""
-        file = File(name: name, content: UITextView())
-        
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if (newFileName.text?.isEmpty)!{
+            return false
+        }
+        return true
     }
     
-    // MARK: Navigation
-    
-    // MARK: Save Button
-    
-//    func textFieldDidBeginEditing(textField: UITextField) {
-//        // Disable the Save button while editing.
-//        saveButton.isEnabled = false
-//    }
-//    
-//    func checkValidFileName() {
-//        // Disable the Save button if the text field is empty.
-//        let text = newFileName.text ?? ""
-//        saveButton.isEnabled = !text.isEmpty
-//    }
-//    
-//    func textFieldDidEndEditing(textField: UITextField) {
-//        checkValidFileName()
-//        navigationItem.title = newFileName.text
-//    }
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let name = newFileName.text!
+        file = File(name: name, content: UITextView())
+    }
 }
