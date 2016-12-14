@@ -10,9 +10,9 @@ import UIKit
 
 class TableViewCell_OpenExisting: UITableViewCell {
 
-    @IBOutlet var projectName: UILabel!
-    @IBOutlet var dateLM: UILabel!
+    @IBOutlet weak var projectName: UILabel!
     
+    @IBOutlet weak var dateLM: UILabel!
     
     
     
