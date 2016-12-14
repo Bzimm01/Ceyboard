@@ -14,7 +14,7 @@ class TableViewController_OpenExisting: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        TableViewController_OpenExisting.allProjects = loadProjects()
+        TableViewController_OpenExisting.allProjects = TableViewController_OpenExisting.loadProjects()
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,10 +60,17 @@ class TableViewController_OpenExisting: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            TableViewController_OpenExisting.allProjects.remove(at: indexPath.row)
-            TableViewController_OpenExisting.saveProjects()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            
+            let yesActionHandler = { (action:UIAlertAction!) -> Void in
+                TableViewController_OpenExisting.allProjects.remove(at: indexPath.row)
+                TableViewController_OpenExisting.saveProjects()
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            let alertView = UIAlertController(title: "Are you sure?", message: "You will not be able to recover this project once it is deleted.  Are you sure you want to continue?", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Yes", style: .default, handler: yesActionHandler)
+            alertView.addAction(defaultAction)
+            let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+            alertView.addAction(cancelAction)
+            present(alertView, animated: true, completion: nil)
             
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -79,7 +86,7 @@ class TableViewController_OpenExisting: UITableViewController {
         }
     }
     
-    func loadProjects() -> [Project]{
+    static func loadProjects() -> [Project]{
         return (NSKeyedUnarchiver.unarchiveObject(withFile: Project.ArchiveURL.path) as? [Project])!
     }
     

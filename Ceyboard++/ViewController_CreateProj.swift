@@ -23,6 +23,7 @@ class ViewController_CreateProj: UIViewController {
         //save new project
         let newProject = Project(name: ProjectNameText.text!, files: [File](), date: NSDate())
         fileListTableViewController.selectedProject = newProject
+        TableViewController_OpenExisting.allProjects = TableViewController_OpenExisting.loadProjects()
         TableViewController_OpenExisting.allProjects.append(newProject!)
         TableViewController_OpenExisting.saveProjects()
         
